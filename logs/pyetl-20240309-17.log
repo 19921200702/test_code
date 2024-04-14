@@ -1,0 +1,19 @@
+2024-03-09 17:39:59,409 - [INFO] - mysql_service.py[14]: 采集MySQL数据的程序启动.....
+2024-03-09 17:39:59,416 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 17:39:59,429 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 17:39:59,445 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 17:39:59,448 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有2条，执行的SQL语句是:show tables
+2024-03-09 17:39:59,449 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有3条，执行的SQL语句是:show tables
+2024-03-09 17:39:59,449 - [INFO] - mysql_util.py[118]: 数据库:retail中，表barcode已经存在，创建表的操作跳过。
+2024-03-09 17:39:59,451 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有2条，执行的SQL语句是:show tables
+2024-03-09 17:39:59,451 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有1条，执行的SQL语句是:select time_record from barcode_monitor order by time_record desc limit 1
+2024-03-09 17:39:59,709 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有3583条，执行的SQL语句是:select * from sys_barcode where updateAt >= '2017-07-10 19:09:09' order by updateAt
+2024-03-09 17:39:59,870 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:1000行
+2024-03-09 17:40:00,020 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:2000行
+2024-03-09 17:40:00,176 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:3000行
+2024-03-09 17:40:00,278 - [INFO] - mysql_service.py[163]: 从数据源:source_data库，读取表:sys_barcode,当前写入目标表:barcode完成，最终写入:3583行
+2024-03-09 17:40:00,785 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-173959.csv,当前写出:1000行。
+2024-03-09 17:40:00,788 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-173959.csv,当前写出:2000行。
+2024-03-09 17:40:00,790 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-173959.csv,当前写出:3000行。
+2024-03-09 17:40:00,793 - [INFO] - mysql_service.py[187]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-173959.csv完成,最终写出:3583行。
+2024-03-09 17:40:00,809 - [INFO] - mysql_service.py[207]: 读取MySql数据，写入目标MySQl和CSV程序执行完成。。。

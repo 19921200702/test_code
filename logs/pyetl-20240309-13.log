@@ -1,0 +1,860 @@
+2024-03-09 13:30:18,967 - [INFO] - mysql_service.py[14]: 采集MySQL数据的程序启动.....
+2024-03-09 13:30:18,974 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 13:30:18,991 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 13:30:19,007 - [INFO] - mysql_util.py[28]: 构建完成到localhost:3306的数据库连接...
+2024-03-09 13:30:19,009 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有2条，执行的SQL语句是:show tables
+2024-03-09 13:30:19,010 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有2条，执行的SQL语句是:show tables
+2024-03-09 13:30:19,065 - [INFO] - mysql_util.py[116]: 在数据库: retail中创建了表: barcode完成。建表语句是: CREATE TABLE barcode(
+        `code` varchar(50) PRIMARY KEY COMMENT '商品条码',
+        `name` varchar(200) DEFAULT '' COMMENT '商品名称',
+        `spec` varchar(200) DEFAULT '' COMMENT '商品规格',
+        `trademark` varchar(100) DEFAULT '' COMMENT '商品商标',
+        `addr` varchar(200) DEFAULT '' COMMENT '商品产地',
+        `units` varchar(50) DEFAULT '' COMMENT '商品单位(个、杯、箱、等)',
+        `factory_name` varchar(200) DEFAULT '' COMMENT '生产厂家',
+        `trade_price` DECIMAL(50, 5) DEFAULT 0.0 COMMENT '贸易价格(指导进价)',
+        `retail_price` DECIMAL(50, 5) DEFAULT 0.0 COMMENT '零售价格(建议卖价)',
+        `update_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+        `wholeunit` varchar(50) DEFAULT NULL COMMENT '大包装单位',
+        `wholenum` int(11) DEFAULT NULL COMMENT '大包装内装数量',
+        `img` varchar(500) DEFAULT NULL COMMENT '商品图片',
+        `src` varchar(20) DEFAULT NULL COMMENT '源信息', 
+        INDEX (update_at)
+)
+2024-03-09 13:30:19,067 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有1条，执行的SQL语句是:show tables
+2024-03-09 13:30:19,067 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有1条，执行的SQL语句是:show tables
+2024-03-09 13:30:19,107 - [INFO] - mysql_util.py[116]: 在数据库: metadata中创建了表: barcode_monitor完成。建表语句是: CREATE TABLE barcode_monitor(id INT PRIMARY KEY AUTO_INCREMENT COMMENT '自增ID', time_record TIMESTAMP NOT NULL COMMENT '本次采集记录的最大时间', gather_line_count INT NULL COMMENT '本次采集条数')
+2024-03-09 13:30:26,406 - [INFO] - mysql_util.py[48]: 执行查询的SQL语句完成，查询的结果有415000条，执行的SQL语句是:select * from sys_barcode order by updateAt
+2024-03-09 13:30:28,865 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:1000行
+2024-03-09 13:30:29,032 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:2000行
+2024-03-09 13:30:29,196 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:3000行
+2024-03-09 13:30:29,367 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:4000行
+2024-03-09 13:30:29,523 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:5000行
+2024-03-09 13:30:29,676 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:6000行
+2024-03-09 13:30:29,832 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:7000行
+2024-03-09 13:30:29,987 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:8000行
+2024-03-09 13:30:30,142 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:9000行
+2024-03-09 13:30:30,298 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:10000行
+2024-03-09 13:30:30,452 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:11000行
+2024-03-09 13:30:30,613 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:12000行
+2024-03-09 13:30:30,788 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:13000行
+2024-03-09 13:30:30,996 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:14000行
+2024-03-09 13:30:31,173 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:15000行
+2024-03-09 13:30:31,330 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:16000行
+2024-03-09 13:30:31,499 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:17000行
+2024-03-09 13:30:31,664 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:18000行
+2024-03-09 13:30:31,819 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:19000行
+2024-03-09 13:30:31,975 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:20000行
+2024-03-09 13:30:32,130 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:21000行
+2024-03-09 13:30:32,286 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:22000行
+2024-03-09 13:30:32,440 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:23000行
+2024-03-09 13:30:32,620 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:24000行
+2024-03-09 13:30:32,783 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:25000行
+2024-03-09 13:30:32,942 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:26000行
+2024-03-09 13:30:33,101 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:27000行
+2024-03-09 13:30:33,257 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:28000行
+2024-03-09 13:30:33,421 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:29000行
+2024-03-09 13:30:33,583 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:30000行
+2024-03-09 13:30:33,756 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:31000行
+2024-03-09 13:30:33,924 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:32000行
+2024-03-09 13:30:34,085 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:33000行
+2024-03-09 13:30:34,250 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:34000行
+2024-03-09 13:30:34,412 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:35000行
+2024-03-09 13:30:34,583 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:36000行
+2024-03-09 13:30:34,739 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:37000行
+2024-03-09 13:30:34,897 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:38000行
+2024-03-09 13:30:35,060 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:39000行
+2024-03-09 13:30:35,229 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:40000行
+2024-03-09 13:30:35,390 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:41000行
+2024-03-09 13:30:35,555 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:42000行
+2024-03-09 13:30:35,713 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:43000行
+2024-03-09 13:30:35,871 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:44000行
+2024-03-09 13:30:36,027 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:45000行
+2024-03-09 13:30:36,184 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:46000行
+2024-03-09 13:30:36,343 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:47000行
+2024-03-09 13:30:36,520 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:48000行
+2024-03-09 13:30:36,693 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:49000行
+2024-03-09 13:30:36,855 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:50000行
+2024-03-09 13:30:37,011 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:51000行
+2024-03-09 13:30:37,167 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:52000行
+2024-03-09 13:30:37,324 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:53000行
+2024-03-09 13:30:37,482 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:54000行
+2024-03-09 13:30:37,648 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:55000行
+2024-03-09 13:30:37,813 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:56000行
+2024-03-09 13:30:37,980 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:57000行
+2024-03-09 13:30:38,143 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:58000行
+2024-03-09 13:30:38,300 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:59000行
+2024-03-09 13:30:38,465 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:60000行
+2024-03-09 13:30:38,626 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:61000行
+2024-03-09 13:30:38,792 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:62000行
+2024-03-09 13:30:38,958 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:63000行
+2024-03-09 13:30:39,120 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:64000行
+2024-03-09 13:30:39,282 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:65000行
+2024-03-09 13:30:39,446 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:66000行
+2024-03-09 13:30:39,611 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:67000行
+2024-03-09 13:30:39,775 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:68000行
+2024-03-09 13:30:39,938 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:69000行
+2024-03-09 13:30:40,102 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:70000行
+2024-03-09 13:30:40,264 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:71000行
+2024-03-09 13:30:40,426 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:72000行
+2024-03-09 13:30:40,586 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:73000行
+2024-03-09 13:30:40,754 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:74000行
+2024-03-09 13:30:40,918 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:75000行
+2024-03-09 13:30:41,079 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:76000行
+2024-03-09 13:30:41,242 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:77000行
+2024-03-09 13:30:41,404 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:78000行
+2024-03-09 13:30:41,566 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:79000行
+2024-03-09 13:30:41,730 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:80000行
+2024-03-09 13:30:41,892 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:81000行
+2024-03-09 13:30:42,058 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:82000行
+2024-03-09 13:30:42,218 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:83000行
+2024-03-09 13:30:42,382 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:84000行
+2024-03-09 13:30:42,544 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:85000行
+2024-03-09 13:30:42,705 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:86000行
+2024-03-09 13:30:42,868 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:87000行
+2024-03-09 13:30:43,032 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:88000行
+2024-03-09 13:30:43,194 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:89000行
+2024-03-09 13:30:43,355 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:90000行
+2024-03-09 13:30:43,516 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:91000行
+2024-03-09 13:30:43,684 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:92000行
+2024-03-09 13:30:43,849 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:93000行
+2024-03-09 13:30:44,011 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:94000行
+2024-03-09 13:30:44,176 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:95000行
+2024-03-09 13:30:44,344 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:96000行
+2024-03-09 13:30:44,505 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:97000行
+2024-03-09 13:30:44,669 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:98000行
+2024-03-09 13:30:44,834 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:99000行
+2024-03-09 13:30:44,996 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:100000行
+2024-03-09 13:30:45,159 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:101000行
+2024-03-09 13:30:45,322 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:102000行
+2024-03-09 13:30:45,483 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:103000行
+2024-03-09 13:30:45,645 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:104000行
+2024-03-09 13:30:45,804 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:105000行
+2024-03-09 13:30:45,972 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:106000行
+2024-03-09 13:30:46,130 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:107000行
+2024-03-09 13:30:46,288 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:108000行
+2024-03-09 13:30:46,446 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:109000行
+2024-03-09 13:30:46,605 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:110000行
+2024-03-09 13:30:46,763 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:111000行
+2024-03-09 13:30:46,920 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:112000行
+2024-03-09 13:30:47,077 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:113000行
+2024-03-09 13:30:47,235 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:114000行
+2024-03-09 13:30:47,392 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:115000行
+2024-03-09 13:30:47,552 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:116000行
+2024-03-09 13:30:47,711 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:117000行
+2024-03-09 13:30:47,870 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:118000行
+2024-03-09 13:30:48,030 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:119000行
+2024-03-09 13:30:48,196 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:120000行
+2024-03-09 13:30:48,360 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:121000行
+2024-03-09 13:30:48,522 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:122000行
+2024-03-09 13:30:48,688 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:123000行
+2024-03-09 13:30:48,852 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:124000行
+2024-03-09 13:30:49,014 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:125000行
+2024-03-09 13:30:49,175 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:126000行
+2024-03-09 13:30:49,339 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:127000行
+2024-03-09 13:30:49,503 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:128000行
+2024-03-09 13:30:49,666 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:129000行
+2024-03-09 13:30:49,827 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:130000行
+2024-03-09 13:30:49,988 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:131000行
+2024-03-09 13:30:50,152 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:132000行
+2024-03-09 13:30:50,314 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:133000行
+2024-03-09 13:30:50,480 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:134000行
+2024-03-09 13:30:50,640 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:135000行
+2024-03-09 13:30:50,803 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:136000行
+2024-03-09 13:30:50,962 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:137000行
+2024-03-09 13:30:51,120 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:138000行
+2024-03-09 13:30:51,280 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:139000行
+2024-03-09 13:30:51,443 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:140000行
+2024-03-09 13:30:51,607 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:141000行
+2024-03-09 13:30:51,768 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:142000行
+2024-03-09 13:30:51,929 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:143000行
+2024-03-09 13:30:52,092 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:144000行
+2024-03-09 13:30:52,251 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:145000行
+2024-03-09 13:30:52,420 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:146000行
+2024-03-09 13:30:52,606 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:147000行
+2024-03-09 13:30:52,769 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:148000行
+2024-03-09 13:30:52,930 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:149000行
+2024-03-09 13:30:53,092 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:150000行
+2024-03-09 13:30:53,252 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:151000行
+2024-03-09 13:30:53,414 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:152000行
+2024-03-09 13:30:53,584 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:153000行
+2024-03-09 13:30:53,750 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:154000行
+2024-03-09 13:30:53,913 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:155000行
+2024-03-09 13:30:54,075 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:156000行
+2024-03-09 13:30:54,237 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:157000行
+2024-03-09 13:30:54,398 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:158000行
+2024-03-09 13:30:54,560 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:159000行
+2024-03-09 13:30:54,721 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:160000行
+2024-03-09 13:30:54,884 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:161000行
+2024-03-09 13:30:55,046 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:162000行
+2024-03-09 13:30:55,211 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:163000行
+2024-03-09 13:30:55,374 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:164000行
+2024-03-09 13:30:55,535 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:165000行
+2024-03-09 13:30:55,696 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:166000行
+2024-03-09 13:30:55,858 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:167000行
+2024-03-09 13:30:56,018 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:168000行
+2024-03-09 13:30:56,183 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:169000行
+2024-03-09 13:30:56,346 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:170000行
+2024-03-09 13:30:56,510 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:171000行
+2024-03-09 13:30:56,674 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:172000行
+2024-03-09 13:30:56,836 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:173000行
+2024-03-09 13:30:56,998 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:174000行
+2024-03-09 13:30:57,162 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:175000行
+2024-03-09 13:30:57,326 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:176000行
+2024-03-09 13:30:57,489 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:177000行
+2024-03-09 13:30:57,652 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:178000行
+2024-03-09 13:30:57,811 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:179000行
+2024-03-09 13:30:57,976 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:180000行
+2024-03-09 13:30:58,136 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:181000行
+2024-03-09 13:30:58,297 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:182000行
+2024-03-09 13:30:58,462 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:183000行
+2024-03-09 13:30:58,626 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:184000行
+2024-03-09 13:30:58,787 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:185000行
+2024-03-09 13:30:58,951 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:186000行
+2024-03-09 13:30:59,113 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:187000行
+2024-03-09 13:30:59,272 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:188000行
+2024-03-09 13:30:59,434 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:189000行
+2024-03-09 13:30:59,600 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:190000行
+2024-03-09 13:30:59,760 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:191000行
+2024-03-09 13:30:59,922 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:192000行
+2024-03-09 13:31:00,083 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:193000行
+2024-03-09 13:31:00,244 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:194000行
+2024-03-09 13:31:00,406 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:195000行
+2024-03-09 13:31:00,567 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:196000行
+2024-03-09 13:31:00,728 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:197000行
+2024-03-09 13:31:00,888 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:198000行
+2024-03-09 13:31:01,050 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:199000行
+2024-03-09 13:31:01,211 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:200000行
+2024-03-09 13:31:01,369 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:201000行
+2024-03-09 13:31:01,532 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:202000行
+2024-03-09 13:31:01,690 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:203000行
+2024-03-09 13:31:01,853 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:204000行
+2024-03-09 13:31:02,029 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:205000行
+2024-03-09 13:31:02,190 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:206000行
+2024-03-09 13:31:02,351 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:207000行
+2024-03-09 13:31:02,512 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:208000行
+2024-03-09 13:31:02,677 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:209000行
+2024-03-09 13:31:02,853 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:210000行
+2024-03-09 13:31:03,030 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:211000行
+2024-03-09 13:31:03,195 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:212000行
+2024-03-09 13:31:03,358 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:213000行
+2024-03-09 13:31:03,518 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:214000行
+2024-03-09 13:31:03,684 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:215000行
+2024-03-09 13:31:03,851 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:216000行
+2024-03-09 13:31:04,017 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:217000行
+2024-03-09 13:31:04,187 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:218000行
+2024-03-09 13:31:04,353 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:219000行
+2024-03-09 13:31:04,514 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:220000行
+2024-03-09 13:31:04,675 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:221000行
+2024-03-09 13:31:04,836 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:222000行
+2024-03-09 13:31:05,000 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:223000行
+2024-03-09 13:31:05,165 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:224000行
+2024-03-09 13:31:05,324 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:225000行
+2024-03-09 13:31:05,486 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:226000行
+2024-03-09 13:31:05,648 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:227000行
+2024-03-09 13:31:05,811 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:228000行
+2024-03-09 13:31:05,975 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:229000行
+2024-03-09 13:31:06,138 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:230000行
+2024-03-09 13:31:06,308 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:231000行
+2024-03-09 13:31:06,473 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:232000行
+2024-03-09 13:31:06,641 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:233000行
+2024-03-09 13:31:06,805 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:234000行
+2024-03-09 13:31:06,973 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:235000行
+2024-03-09 13:31:07,140 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:236000行
+2024-03-09 13:31:07,301 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:237000行
+2024-03-09 13:31:07,465 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:238000行
+2024-03-09 13:31:07,632 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:239000行
+2024-03-09 13:31:07,797 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:240000行
+2024-03-09 13:31:07,966 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:241000行
+2024-03-09 13:31:08,132 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:242000行
+2024-03-09 13:31:08,297 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:243000行
+2024-03-09 13:31:08,468 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:244000行
+2024-03-09 13:31:08,637 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:245000行
+2024-03-09 13:31:08,798 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:246000行
+2024-03-09 13:31:08,967 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:247000行
+2024-03-09 13:31:09,133 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:248000行
+2024-03-09 13:31:09,302 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:249000行
+2024-03-09 13:31:09,470 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:250000行
+2024-03-09 13:31:09,641 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:251000行
+2024-03-09 13:31:09,809 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:252000行
+2024-03-09 13:31:09,984 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:253000行
+2024-03-09 13:31:10,157 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:254000行
+2024-03-09 13:31:10,330 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:255000行
+2024-03-09 13:31:10,513 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:256000行
+2024-03-09 13:31:10,689 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:257000行
+2024-03-09 13:31:10,870 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:258000行
+2024-03-09 13:31:11,051 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:259000行
+2024-03-09 13:31:11,232 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:260000行
+2024-03-09 13:31:11,420 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:261000行
+2024-03-09 13:31:11,610 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:262000行
+2024-03-09 13:31:11,787 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:263000行
+2024-03-09 13:31:11,974 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:264000行
+2024-03-09 13:31:12,143 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:265000行
+2024-03-09 13:31:12,311 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:266000行
+2024-03-09 13:31:12,479 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:267000行
+2024-03-09 13:31:12,673 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:268000行
+2024-03-09 13:31:12,858 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:269000行
+2024-03-09 13:31:13,062 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:270000行
+2024-03-09 13:31:13,258 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:271000行
+2024-03-09 13:31:13,435 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:272000行
+2024-03-09 13:31:13,611 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:273000行
+2024-03-09 13:31:13,783 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:274000行
+2024-03-09 13:31:13,962 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:275000行
+2024-03-09 13:31:14,186 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:276000行
+2024-03-09 13:31:14,372 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:277000行
+2024-03-09 13:31:14,563 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:278000行
+2024-03-09 13:31:14,745 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:279000行
+2024-03-09 13:31:14,925 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:280000行
+2024-03-09 13:31:15,114 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:281000行
+2024-03-09 13:31:15,293 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:282000行
+2024-03-09 13:31:15,484 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:283000行
+2024-03-09 13:31:15,664 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:284000行
+2024-03-09 13:31:15,842 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:285000行
+2024-03-09 13:31:16,029 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:286000行
+2024-03-09 13:31:16,220 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:287000行
+2024-03-09 13:31:16,403 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:288000行
+2024-03-09 13:31:16,586 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:289000行
+2024-03-09 13:31:16,764 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:290000行
+2024-03-09 13:31:16,939 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:291000行
+2024-03-09 13:31:17,143 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:292000行
+2024-03-09 13:31:17,335 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:293000行
+2024-03-09 13:31:17,515 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:294000行
+2024-03-09 13:31:17,723 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:295000行
+2024-03-09 13:31:17,906 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:296000行
+2024-03-09 13:31:18,117 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:297000行
+2024-03-09 13:31:18,313 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:298000行
+2024-03-09 13:31:18,504 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:299000行
+2024-03-09 13:31:18,687 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:300000行
+2024-03-09 13:31:18,865 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:301000行
+2024-03-09 13:31:19,052 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:302000行
+2024-03-09 13:31:19,244 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:303000行
+2024-03-09 13:31:19,434 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:304000行
+2024-03-09 13:31:19,610 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:305000行
+2024-03-09 13:31:19,798 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:306000行
+2024-03-09 13:31:19,978 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:307000行
+2024-03-09 13:31:20,205 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:308000行
+2024-03-09 13:31:20,409 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:309000行
+2024-03-09 13:31:20,604 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:310000行
+2024-03-09 13:31:20,808 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:311000行
+2024-03-09 13:31:20,998 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:312000行
+2024-03-09 13:31:21,222 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:313000行
+2024-03-09 13:31:21,427 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:314000行
+2024-03-09 13:31:21,628 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:315000行
+2024-03-09 13:31:21,812 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:316000行
+2024-03-09 13:31:21,991 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:317000行
+2024-03-09 13:31:22,196 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:318000行
+2024-03-09 13:31:22,400 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:319000行
+2024-03-09 13:31:22,612 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:320000行
+2024-03-09 13:31:22,794 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:321000行
+2024-03-09 13:31:22,977 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:322000行
+2024-03-09 13:31:23,221 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:323000行
+2024-03-09 13:31:23,453 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:324000行
+2024-03-09 13:31:23,650 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:325000行
+2024-03-09 13:31:23,849 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:326000行
+2024-03-09 13:31:24,035 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:327000行
+2024-03-09 13:31:24,255 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:328000行
+2024-03-09 13:31:24,457 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:329000行
+2024-03-09 13:31:24,656 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:330000行
+2024-03-09 13:31:24,872 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:331000行
+2024-03-09 13:31:25,069 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:332000行
+2024-03-09 13:31:25,294 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:333000行
+2024-03-09 13:31:25,507 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:334000行
+2024-03-09 13:31:25,699 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:335000行
+2024-03-09 13:31:25,921 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:336000行
+2024-03-09 13:31:26,169 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:337000行
+2024-03-09 13:31:26,380 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:338000行
+2024-03-09 13:31:26,593 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:339000行
+2024-03-09 13:31:26,829 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:340000行
+2024-03-09 13:31:27,033 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:341000行
+2024-03-09 13:31:27,278 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:342000行
+2024-03-09 13:31:27,498 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:343000行
+2024-03-09 13:31:27,717 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:344000行
+2024-03-09 13:31:27,969 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:345000行
+2024-03-09 13:31:28,200 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:346000行
+2024-03-09 13:31:28,433 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:347000行
+2024-03-09 13:31:28,647 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:348000行
+2024-03-09 13:31:28,840 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:349000行
+2024-03-09 13:31:29,025 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:350000行
+2024-03-09 13:31:29,252 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:351000行
+2024-03-09 13:31:29,462 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:352000行
+2024-03-09 13:31:29,668 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:353000行
+2024-03-09 13:31:29,882 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:354000行
+2024-03-09 13:31:30,075 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:355000行
+2024-03-09 13:31:30,319 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:356000行
+2024-03-09 13:31:30,528 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:357000行
+2024-03-09 13:31:30,724 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:358000行
+2024-03-09 13:31:30,916 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:359000行
+2024-03-09 13:31:31,102 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:360000行
+2024-03-09 13:31:31,331 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:361000行
+2024-03-09 13:31:31,541 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:362000行
+2024-03-09 13:31:31,734 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:363000行
+2024-03-09 13:31:31,924 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:364000行
+2024-03-09 13:31:32,113 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:365000行
+2024-03-09 13:31:32,361 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:366000行
+2024-03-09 13:31:32,587 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:367000行
+2024-03-09 13:31:32,787 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:368000行
+2024-03-09 13:31:32,978 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:369000行
+2024-03-09 13:31:33,196 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:370000行
+2024-03-09 13:31:33,402 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:371000行
+2024-03-09 13:31:33,582 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:372000行
+2024-03-09 13:31:33,759 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:373000行
+2024-03-09 13:31:33,941 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:374000行
+2024-03-09 13:31:34,139 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:375000行
+2024-03-09 13:31:34,318 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:376000行
+2024-03-09 13:31:34,513 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:377000行
+2024-03-09 13:31:34,695 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:378000行
+2024-03-09 13:31:34,883 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:379000行
+2024-03-09 13:31:35,071 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:380000行
+2024-03-09 13:31:35,258 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:381000行
+2024-03-09 13:31:35,450 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:382000行
+2024-03-09 13:31:35,638 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:383000行
+2024-03-09 13:31:35,842 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:384000行
+2024-03-09 13:31:36,027 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:385000行
+2024-03-09 13:31:36,216 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:386000行
+2024-03-09 13:31:36,407 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:387000行
+2024-03-09 13:31:36,598 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:388000行
+2024-03-09 13:31:36,836 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:389000行
+2024-03-09 13:31:37,014 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:390000行
+2024-03-09 13:31:37,198 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:391000行
+2024-03-09 13:31:37,379 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:392000行
+2024-03-09 13:31:37,563 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:393000行
+2024-03-09 13:31:37,737 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:394000行
+2024-03-09 13:31:37,908 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:395000行
+2024-03-09 13:31:38,083 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:396000行
+2024-03-09 13:31:38,258 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:397000行
+2024-03-09 13:31:38,429 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:398000行
+2024-03-09 13:31:38,602 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:399000行
+2024-03-09 13:31:38,773 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:400000行
+2024-03-09 13:31:38,949 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:401000行
+2024-03-09 13:31:39,119 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:402000行
+2024-03-09 13:31:39,289 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:403000行
+2024-03-09 13:31:39,463 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:404000行
+2024-03-09 13:31:39,635 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:405000行
+2024-03-09 13:31:39,818 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:406000行
+2024-03-09 13:31:39,989 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:407000行
+2024-03-09 13:31:40,162 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:408000行
+2024-03-09 13:31:40,342 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:409000行
+2024-03-09 13:31:40,519 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:410000行
+2024-03-09 13:31:40,699 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:411000行
+2024-03-09 13:31:40,865 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:412000行
+2024-03-09 13:31:41,026 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:413000行
+2024-03-09 13:31:41,217 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:414000行
+2024-03-09 13:31:41,404 - [INFO] - mysql_service.py[158]: 从数据源:source_data库，读取表: sys_barcode,当前写入目标表：barcode数据有:415000行
+2024-03-09 13:31:41,404 - [INFO] - mysql_service.py[163]: 从数据源:source_data库，读取表:sys_barcode,当前写入目标表:barcode完成，最终写入:415000行
+2024-03-09 13:31:41,913 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:1000行。
+2024-03-09 13:31:41,915 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:2000行。
+2024-03-09 13:31:41,917 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:3000行。
+2024-03-09 13:31:41,919 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:4000行。
+2024-03-09 13:31:41,921 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:5000行。
+2024-03-09 13:31:41,923 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:6000行。
+2024-03-09 13:31:41,925 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:7000行。
+2024-03-09 13:31:41,928 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:8000行。
+2024-03-09 13:31:41,930 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:9000行。
+2024-03-09 13:31:41,932 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:10000行。
+2024-03-09 13:31:41,934 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:11000行。
+2024-03-09 13:31:41,936 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:12000行。
+2024-03-09 13:31:41,938 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:13000行。
+2024-03-09 13:31:41,940 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:14000行。
+2024-03-09 13:31:41,942 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:15000行。
+2024-03-09 13:31:41,944 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:16000行。
+2024-03-09 13:31:41,947 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:17000行。
+2024-03-09 13:31:41,948 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:18000行。
+2024-03-09 13:31:41,951 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:19000行。
+2024-03-09 13:31:41,954 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:20000行。
+2024-03-09 13:31:41,956 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:21000行。
+2024-03-09 13:31:41,958 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:22000行。
+2024-03-09 13:31:41,960 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:23000行。
+2024-03-09 13:31:41,962 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:24000行。
+2024-03-09 13:31:41,964 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:25000行。
+2024-03-09 13:31:41,967 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:26000行。
+2024-03-09 13:31:41,968 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:27000行。
+2024-03-09 13:31:41,971 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:28000行。
+2024-03-09 13:31:41,973 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:29000行。
+2024-03-09 13:31:41,974 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:30000行。
+2024-03-09 13:31:41,978 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:31000行。
+2024-03-09 13:31:41,979 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:32000行。
+2024-03-09 13:31:41,982 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:33000行。
+2024-03-09 13:31:41,984 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:34000行。
+2024-03-09 13:31:41,986 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:35000行。
+2024-03-09 13:31:41,988 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:36000行。
+2024-03-09 13:31:41,991 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:37000行。
+2024-03-09 13:31:41,993 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:38000行。
+2024-03-09 13:31:41,994 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:39000行。
+2024-03-09 13:31:41,997 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:40000行。
+2024-03-09 13:31:41,999 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:41000行。
+2024-03-09 13:31:42,001 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:42000行。
+2024-03-09 13:31:42,004 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:43000行。
+2024-03-09 13:31:42,006 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:44000行。
+2024-03-09 13:31:42,008 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:45000行。
+2024-03-09 13:31:42,010 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:46000行。
+2024-03-09 13:31:42,012 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:47000行。
+2024-03-09 13:31:42,014 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:48000行。
+2024-03-09 13:31:42,017 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:49000行。
+2024-03-09 13:31:42,019 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:50000行。
+2024-03-09 13:31:42,021 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:51000行。
+2024-03-09 13:31:42,023 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:52000行。
+2024-03-09 13:31:42,026 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:53000行。
+2024-03-09 13:31:42,028 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:54000行。
+2024-03-09 13:31:42,030 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:55000行。
+2024-03-09 13:31:42,032 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:56000行。
+2024-03-09 13:31:42,034 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:57000行。
+2024-03-09 13:31:42,037 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:58000行。
+2024-03-09 13:31:42,039 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:59000行。
+2024-03-09 13:31:42,041 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:60000行。
+2024-03-09 13:31:42,044 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:61000行。
+2024-03-09 13:31:42,046 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:62000行。
+2024-03-09 13:31:42,048 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:63000行。
+2024-03-09 13:31:42,050 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:64000行。
+2024-03-09 13:31:42,053 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:65000行。
+2024-03-09 13:31:42,056 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:66000行。
+2024-03-09 13:31:42,058 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:67000行。
+2024-03-09 13:31:42,061 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:68000行。
+2024-03-09 13:31:42,064 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:69000行。
+2024-03-09 13:31:42,065 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:70000行。
+2024-03-09 13:31:42,068 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:71000行。
+2024-03-09 13:31:42,071 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:72000行。
+2024-03-09 13:31:42,073 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:73000行。
+2024-03-09 13:31:42,075 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:74000行。
+2024-03-09 13:31:42,078 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:75000行。
+2024-03-09 13:31:42,080 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:76000行。
+2024-03-09 13:31:42,083 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:77000行。
+2024-03-09 13:31:42,085 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:78000行。
+2024-03-09 13:31:42,087 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:79000行。
+2024-03-09 13:31:42,090 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:80000行。
+2024-03-09 13:31:42,092 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:81000行。
+2024-03-09 13:31:42,094 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:82000行。
+2024-03-09 13:31:42,097 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:83000行。
+2024-03-09 13:31:42,099 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:84000行。
+2024-03-09 13:31:42,101 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:85000行。
+2024-03-09 13:31:42,104 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:86000行。
+2024-03-09 13:31:42,106 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:87000行。
+2024-03-09 13:31:42,108 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:88000行。
+2024-03-09 13:31:42,110 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:89000行。
+2024-03-09 13:31:42,113 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:90000行。
+2024-03-09 13:31:42,115 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:91000行。
+2024-03-09 13:31:42,118 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:92000行。
+2024-03-09 13:31:42,120 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:93000行。
+2024-03-09 13:31:42,123 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:94000行。
+2024-03-09 13:31:42,125 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:95000行。
+2024-03-09 13:31:42,127 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:96000行。
+2024-03-09 13:31:42,130 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:97000行。
+2024-03-09 13:31:42,132 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:98000行。
+2024-03-09 13:31:42,134 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:99000行。
+2024-03-09 13:31:42,137 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:100000行。
+2024-03-09 13:31:42,139 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:101000行。
+2024-03-09 13:31:42,142 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:102000行。
+2024-03-09 13:31:42,144 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:103000行。
+2024-03-09 13:31:42,146 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:104000行。
+2024-03-09 13:31:42,149 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:105000行。
+2024-03-09 13:31:42,151 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:106000行。
+2024-03-09 13:31:42,154 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:107000行。
+2024-03-09 13:31:42,156 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:108000行。
+2024-03-09 13:31:42,158 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:109000行。
+2024-03-09 13:31:42,160 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:110000行。
+2024-03-09 13:31:42,163 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:111000行。
+2024-03-09 13:31:42,165 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:112000行。
+2024-03-09 13:31:42,168 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:113000行。
+2024-03-09 13:31:42,170 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:114000行。
+2024-03-09 13:31:42,172 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:115000行。
+2024-03-09 13:31:42,175 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:116000行。
+2024-03-09 13:31:42,177 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:117000行。
+2024-03-09 13:31:42,179 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:118000行。
+2024-03-09 13:31:42,182 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:119000行。
+2024-03-09 13:31:42,184 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:120000行。
+2024-03-09 13:31:42,186 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:121000行。
+2024-03-09 13:31:42,189 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:122000行。
+2024-03-09 13:31:42,191 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:123000行。
+2024-03-09 13:31:42,194 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:124000行。
+2024-03-09 13:31:42,196 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:125000行。
+2024-03-09 13:31:42,199 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:126000行。
+2024-03-09 13:31:42,201 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:127000行。
+2024-03-09 13:31:42,203 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:128000行。
+2024-03-09 13:31:42,206 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:129000行。
+2024-03-09 13:31:42,208 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:130000行。
+2024-03-09 13:31:42,211 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:131000行。
+2024-03-09 13:31:42,213 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:132000行。
+2024-03-09 13:31:42,215 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:133000行。
+2024-03-09 13:31:42,218 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:134000行。
+2024-03-09 13:31:42,221 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:135000行。
+2024-03-09 13:31:42,223 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:136000行。
+2024-03-09 13:31:42,225 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:137000行。
+2024-03-09 13:31:42,228 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:138000行。
+2024-03-09 13:31:42,230 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:139000行。
+2024-03-09 13:31:42,232 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:140000行。
+2024-03-09 13:31:42,235 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:141000行。
+2024-03-09 13:31:42,237 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:142000行。
+2024-03-09 13:31:42,240 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:143000行。
+2024-03-09 13:31:42,242 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:144000行。
+2024-03-09 13:31:42,244 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:145000行。
+2024-03-09 13:31:42,247 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:146000行。
+2024-03-09 13:31:42,249 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:147000行。
+2024-03-09 13:31:42,251 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:148000行。
+2024-03-09 13:31:42,254 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:149000行。
+2024-03-09 13:31:42,256 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:150000行。
+2024-03-09 13:31:42,258 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:151000行。
+2024-03-09 13:31:42,261 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:152000行。
+2024-03-09 13:31:42,263 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:153000行。
+2024-03-09 13:31:42,265 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:154000行。
+2024-03-09 13:31:42,267 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:155000行。
+2024-03-09 13:31:42,270 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:156000行。
+2024-03-09 13:31:42,272 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:157000行。
+2024-03-09 13:31:42,274 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:158000行。
+2024-03-09 13:31:42,277 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:159000行。
+2024-03-09 13:31:42,279 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:160000行。
+2024-03-09 13:31:42,281 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:161000行。
+2024-03-09 13:31:42,283 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:162000行。
+2024-03-09 13:31:42,286 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:163000行。
+2024-03-09 13:31:42,289 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:164000行。
+2024-03-09 13:31:42,291 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:165000行。
+2024-03-09 13:31:42,293 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:166000行。
+2024-03-09 13:31:42,295 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:167000行。
+2024-03-09 13:31:42,298 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:168000行。
+2024-03-09 13:31:42,300 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:169000行。
+2024-03-09 13:31:42,302 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:170000行。
+2024-03-09 13:31:42,305 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:171000行。
+2024-03-09 13:31:42,307 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:172000行。
+2024-03-09 13:31:42,310 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:173000行。
+2024-03-09 13:31:42,312 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:174000行。
+2024-03-09 13:31:42,314 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:175000行。
+2024-03-09 13:31:42,316 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:176000行。
+2024-03-09 13:31:42,319 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:177000行。
+2024-03-09 13:31:42,321 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:178000行。
+2024-03-09 13:31:42,323 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:179000行。
+2024-03-09 13:31:42,325 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:180000行。
+2024-03-09 13:31:42,328 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:181000行。
+2024-03-09 13:31:42,330 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:182000行。
+2024-03-09 13:31:42,332 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:183000行。
+2024-03-09 13:31:42,335 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:184000行。
+2024-03-09 13:31:42,337 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:185000行。
+2024-03-09 13:31:42,339 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:186000行。
+2024-03-09 13:31:42,341 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:187000行。
+2024-03-09 13:31:42,343 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:188000行。
+2024-03-09 13:31:42,346 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:189000行。
+2024-03-09 13:31:42,348 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:190000行。
+2024-03-09 13:31:42,350 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:191000行。
+2024-03-09 13:31:42,353 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:192000行。
+2024-03-09 13:31:42,355 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:193000行。
+2024-03-09 13:31:42,358 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:194000行。
+2024-03-09 13:31:42,360 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:195000行。
+2024-03-09 13:31:42,362 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:196000行。
+2024-03-09 13:31:42,365 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:197000行。
+2024-03-09 13:31:42,367 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:198000行。
+2024-03-09 13:31:42,369 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:199000行。
+2024-03-09 13:31:42,372 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:200000行。
+2024-03-09 13:31:42,375 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:201000行。
+2024-03-09 13:31:42,378 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:202000行。
+2024-03-09 13:31:42,380 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:203000行。
+2024-03-09 13:31:42,382 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:204000行。
+2024-03-09 13:31:42,384 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:205000行。
+2024-03-09 13:31:42,387 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:206000行。
+2024-03-09 13:31:42,389 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:207000行。
+2024-03-09 13:31:42,392 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:208000行。
+2024-03-09 13:31:42,394 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:209000行。
+2024-03-09 13:31:42,397 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:210000行。
+2024-03-09 13:31:42,399 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:211000行。
+2024-03-09 13:31:42,401 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:212000行。
+2024-03-09 13:31:42,403 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:213000行。
+2024-03-09 13:31:42,406 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:214000行。
+2024-03-09 13:31:42,408 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:215000行。
+2024-03-09 13:31:42,410 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:216000行。
+2024-03-09 13:31:42,412 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:217000行。
+2024-03-09 13:31:42,414 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:218000行。
+2024-03-09 13:31:42,417 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:219000行。
+2024-03-09 13:31:42,419 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:220000行。
+2024-03-09 13:31:42,422 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:221000行。
+2024-03-09 13:31:42,424 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:222000行。
+2024-03-09 13:31:42,427 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:223000行。
+2024-03-09 13:31:42,429 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:224000行。
+2024-03-09 13:31:42,431 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:225000行。
+2024-03-09 13:31:42,433 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:226000行。
+2024-03-09 13:31:42,436 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:227000行。
+2024-03-09 13:31:42,438 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:228000行。
+2024-03-09 13:31:42,440 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:229000行。
+2024-03-09 13:31:42,443 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:230000行。
+2024-03-09 13:31:42,444 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:231000行。
+2024-03-09 13:31:42,448 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:232000行。
+2024-03-09 13:31:42,450 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:233000行。
+2024-03-09 13:31:42,452 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:234000行。
+2024-03-09 13:31:42,454 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:235000行。
+2024-03-09 13:31:42,457 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:236000行。
+2024-03-09 13:31:42,459 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:237000行。
+2024-03-09 13:31:42,462 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:238000行。
+2024-03-09 13:31:42,464 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:239000行。
+2024-03-09 13:31:42,467 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:240000行。
+2024-03-09 13:31:42,469 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:241000行。
+2024-03-09 13:31:42,471 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:242000行。
+2024-03-09 13:31:42,473 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:243000行。
+2024-03-09 13:31:42,476 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:244000行。
+2024-03-09 13:31:42,478 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:245000行。
+2024-03-09 13:31:42,480 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:246000行。
+2024-03-09 13:31:42,483 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:247000行。
+2024-03-09 13:31:42,484 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:248000行。
+2024-03-09 13:31:42,488 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:249000行。
+2024-03-09 13:31:42,490 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:250000行。
+2024-03-09 13:31:42,492 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:251000行。
+2024-03-09 13:31:42,494 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:252000行。
+2024-03-09 13:31:42,497 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:253000行。
+2024-03-09 13:31:42,499 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:254000行。
+2024-03-09 13:31:42,501 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:255000行。
+2024-03-09 13:31:42,504 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:256000行。
+2024-03-09 13:31:42,507 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:257000行。
+2024-03-09 13:31:42,510 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:258000行。
+2024-03-09 13:31:42,512 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:259000行。
+2024-03-09 13:31:42,514 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:260000行。
+2024-03-09 13:31:42,517 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:261000行。
+2024-03-09 13:31:42,519 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:262000行。
+2024-03-09 13:31:42,522 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:263000行。
+2024-03-09 13:31:42,524 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:264000行。
+2024-03-09 13:31:42,526 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:265000行。
+2024-03-09 13:31:42,528 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:266000行。
+2024-03-09 13:31:42,531 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:267000行。
+2024-03-09 13:31:42,533 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:268000行。
+2024-03-09 13:31:42,536 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:269000行。
+2024-03-09 13:31:42,539 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:270000行。
+2024-03-09 13:31:42,541 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:271000行。
+2024-03-09 13:31:42,544 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:272000行。
+2024-03-09 13:31:42,546 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:273000行。
+2024-03-09 13:31:42,548 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:274000行。
+2024-03-09 13:31:42,550 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:275000行。
+2024-03-09 13:31:42,552 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:276000行。
+2024-03-09 13:31:42,554 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:277000行。
+2024-03-09 13:31:42,557 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:278000行。
+2024-03-09 13:31:42,559 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:279000行。
+2024-03-09 13:31:42,562 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:280000行。
+2024-03-09 13:31:42,564 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:281000行。
+2024-03-09 13:31:42,567 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:282000行。
+2024-03-09 13:31:42,569 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:283000行。
+2024-03-09 13:31:42,571 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:284000行。
+2024-03-09 13:31:42,574 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:285000行。
+2024-03-09 13:31:42,577 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:286000行。
+2024-03-09 13:31:42,578 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:287000行。
+2024-03-09 13:31:42,581 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:288000行。
+2024-03-09 13:31:42,583 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:289000行。
+2024-03-09 13:31:42,586 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:290000行。
+2024-03-09 13:31:42,588 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:291000行。
+2024-03-09 13:31:42,591 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:292000行。
+2024-03-09 13:31:42,593 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:293000行。
+2024-03-09 13:31:42,596 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:294000行。
+2024-03-09 13:31:42,598 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:295000行。
+2024-03-09 13:31:42,600 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:296000行。
+2024-03-09 13:31:42,602 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:297000行。
+2024-03-09 13:31:42,604 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:298000行。
+2024-03-09 13:31:42,607 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:299000行。
+2024-03-09 13:31:42,609 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:300000行。
+2024-03-09 13:31:42,612 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:301000行。
+2024-03-09 13:31:42,614 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:302000行。
+2024-03-09 13:31:42,617 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:303000行。
+2024-03-09 13:31:42,619 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:304000行。
+2024-03-09 13:31:42,621 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:305000行。
+2024-03-09 13:31:42,624 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:306000行。
+2024-03-09 13:31:42,626 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:307000行。
+2024-03-09 13:31:42,628 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:308000行。
+2024-03-09 13:31:42,631 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:309000行。
+2024-03-09 13:31:42,633 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:310000行。
+2024-03-09 13:31:42,636 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:311000行。
+2024-03-09 13:31:42,638 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:312000行。
+2024-03-09 13:31:42,640 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:313000行。
+2024-03-09 13:31:42,642 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:314000行。
+2024-03-09 13:31:42,644 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:315000行。
+2024-03-09 13:31:42,647 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:316000行。
+2024-03-09 13:31:42,649 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:317000行。
+2024-03-09 13:31:42,652 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:318000行。
+2024-03-09 13:31:42,654 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:319000行。
+2024-03-09 13:31:42,657 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:320000行。
+2024-03-09 13:31:42,659 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:321000行。
+2024-03-09 13:31:42,661 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:322000行。
+2024-03-09 13:31:42,664 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:323000行。
+2024-03-09 13:31:42,667 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:324000行。
+2024-03-09 13:31:42,670 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:325000行。
+2024-03-09 13:31:42,672 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:326000行。
+2024-03-09 13:31:42,674 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:327000行。
+2024-03-09 13:31:42,677 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:328000行。
+2024-03-09 13:31:42,679 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:329000行。
+2024-03-09 13:31:42,681 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:330000行。
+2024-03-09 13:31:42,683 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:331000行。
+2024-03-09 13:31:42,686 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:332000行。
+2024-03-09 13:31:42,689 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:333000行。
+2024-03-09 13:31:42,691 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:334000行。
+2024-03-09 13:31:42,693 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:335000行。
+2024-03-09 13:31:42,695 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:336000行。
+2024-03-09 13:31:42,698 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:337000行。
+2024-03-09 13:31:42,701 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:338000行。
+2024-03-09 13:31:42,703 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:339000行。
+2024-03-09 13:31:42,705 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:340000行。
+2024-03-09 13:31:42,708 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:341000行。
+2024-03-09 13:31:42,710 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:342000行。
+2024-03-09 13:31:42,712 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:343000行。
+2024-03-09 13:31:42,715 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:344000行。
+2024-03-09 13:31:42,718 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:345000行。
+2024-03-09 13:31:42,720 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:346000行。
+2024-03-09 13:31:42,722 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:347000行。
+2024-03-09 13:31:42,725 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:348000行。
+2024-03-09 13:31:42,727 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:349000行。
+2024-03-09 13:31:42,730 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:350000行。
+2024-03-09 13:31:42,732 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:351000行。
+2024-03-09 13:31:42,734 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:352000行。
+2024-03-09 13:31:42,737 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:353000行。
+2024-03-09 13:31:42,739 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:354000行。
+2024-03-09 13:31:42,741 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:355000行。
+2024-03-09 13:31:42,744 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:356000行。
+2024-03-09 13:31:42,746 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:357000行。
+2024-03-09 13:31:42,748 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:358000行。
+2024-03-09 13:31:42,750 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:359000行。
+2024-03-09 13:31:42,753 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:360000行。
+2024-03-09 13:31:42,756 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:361000行。
+2024-03-09 13:31:42,758 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:362000行。
+2024-03-09 13:31:42,760 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:363000行。
+2024-03-09 13:31:42,762 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:364000行。
+2024-03-09 13:31:42,764 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:365000行。
+2024-03-09 13:31:42,767 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:366000行。
+2024-03-09 13:31:42,769 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:367000行。
+2024-03-09 13:31:42,772 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:368000行。
+2024-03-09 13:31:42,774 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:369000行。
+2024-03-09 13:31:42,777 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:370000行。
+2024-03-09 13:31:42,779 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:371000行。
+2024-03-09 13:31:42,781 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:372000行。
+2024-03-09 13:31:42,783 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:373000行。
+2024-03-09 13:31:42,786 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:374000行。
+2024-03-09 13:31:42,788 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:375000行。
+2024-03-09 13:31:42,790 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:376000行。
+2024-03-09 13:31:42,792 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:377000行。
+2024-03-09 13:31:42,794 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:378000行。
+2024-03-09 13:31:42,797 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:379000行。
+2024-03-09 13:31:42,799 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:380000行。
+2024-03-09 13:31:42,801 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:381000行。
+2024-03-09 13:31:42,804 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:382000行。
+2024-03-09 13:31:42,807 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:383000行。
+2024-03-09 13:31:42,808 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:384000行。
+2024-03-09 13:31:42,811 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:385000行。
+2024-03-09 13:31:42,813 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:386000行。
+2024-03-09 13:31:42,816 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:387000行。
+2024-03-09 13:31:42,818 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:388000行。
+2024-03-09 13:31:42,820 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:389000行。
+2024-03-09 13:31:42,823 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:390000行。
+2024-03-09 13:31:42,826 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:391000行。
+2024-03-09 13:31:42,829 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:392000行。
+2024-03-09 13:31:42,831 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:393000行。
+2024-03-09 13:31:42,833 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:394000行。
+2024-03-09 13:31:42,835 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:395000行。
+2024-03-09 13:31:42,838 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:396000行。
+2024-03-09 13:31:42,840 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:397000行。
+2024-03-09 13:31:42,843 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:398000行。
+2024-03-09 13:31:42,845 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:399000行。
+2024-03-09 13:31:42,847 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:400000行。
+2024-03-09 13:31:42,849 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:401000行。
+2024-03-09 13:31:42,852 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:402000行。
+2024-03-09 13:31:42,854 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:403000行。
+2024-03-09 13:31:42,857 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:404000行。
+2024-03-09 13:31:42,859 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:405000行。
+2024-03-09 13:31:42,862 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:406000行。
+2024-03-09 13:31:42,864 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:407000行。
+2024-03-09 13:31:42,866 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:408000行。
+2024-03-09 13:31:42,869 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:409000行。
+2024-03-09 13:31:42,871 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:410000行。
+2024-03-09 13:31:42,873 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:411000行。
+2024-03-09 13:31:42,876 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:412000行。
+2024-03-09 13:31:42,878 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:413000行。
+2024-03-09 13:31:42,880 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:414000行。
+2024-03-09 13:31:42,883 - [INFO] - mysql_service.py[183]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv,当前写出:415000行。
+2024-03-09 13:31:43,007 - [INFO] - mysql_service.py[187]: 从数据源:source_data库，读取表:sys_barcode,写出CSV到:F:/pyetl-data-logs/output/csv/barcode-20240309-133018.csv完成,最终写出:415000行。
+2024-03-09 13:31:43,025 - [INFO] - mysql_service.py[207]: 读取MySql数据，写入目标MySQl和CSV程序执行完成。。。

@@ -1,0 +1,9 @@
+2023-11-13 09:34:45,850 - [INFO] - json_service.py[9]: 读取json数据处理，程序开始执行了.....
+2023-11-13 09:34:45,851 - [INFO] - json_service.py[13]: 判断json的文件夹，发现有如下文件:['F:/百度网盘下载/4-ETL/Day01/测试/x14', 'F:/百度网盘下载/4-ETL/Day01/测试/x21', 'F:/百度网盘下载/4-ETL/Day01/测试/x24']
+2023-11-13 09:34:45,859 - [INFO] - mysql_util.py[17]: 构建完成到localhost:3306的数据库连接...
+2023-11-13 09:34:45,861 - [INFO] - mysql_util.py[37]: 执行查询的SQL语句完成，查询的结果有1条，执行的SQL语句是:show tables
+2023-11-13 09:34:45,862 - [INFO] - mysql_util.py[107]: 数据库:metadata中，表file_monitor已经存在，创建表的操作跳过。
+2023-11-13 09:34:45,862 - [INFO] - mysql_util.py[37]: 执行查询的SQL语句完成，查询的结果有0条，执行的SQL语句是:select file_name from file_monitor
+2023-11-13 09:34:45,862 - [INFO] - json_service.py[21]: 查询mysql，找到有如下文件已经被处理过了：[]
+2023-11-13 09:34:45,862 - [INFO] - json_service.py[26]: 经过对比mysql元数据库，找出如下文件供我们处理:['F:/百度网盘下载/4-ETL/Day01/测试/x14', 'F:/百度网盘下载/4-ETL/Day01/测试/x21', 'F:/百度网盘下载/4-ETL/Day01/测试/x24']
+2023-11-13 09:34:46,050 - [INFO] - json_service.py[82]: 完成了CSV备份文件的写出，写出到了：F:/pyetl-data-logs/output/csv/
